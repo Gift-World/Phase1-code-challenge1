@@ -43,8 +43,9 @@ function netSalary(basicSalary, benefits) {
   const nssf = nssfCalculation(grossSalary);
   const incomeToBeTaxed = taxableIncomeCalc(grossSalary, nssf);
   const payee = payeeCalculation(incomeToBeTaxed);
-  const netSalaryy = grossSalary - nssf - nhif - payee;
+  const netSalaryy = grossSalary - nssf - nhif - payee + benefits;
 }
 const basicSalary = prompt("Enter your basic salary"); // prompts the user to key in the gross payment
+const benefits = prompt("Enter your benefits"); // prompts the user to key in the benefits
 console.log(`tax : ${payeeCalculation}`); // calculates and returns the amount of tax paid per gross payment
 alert(`Net Salary : ${netSalary}`); //alerts the user of net salary after all deductions
