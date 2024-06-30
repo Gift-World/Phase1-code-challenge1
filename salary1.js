@@ -1,9 +1,10 @@
 function nssfCalculation(grossSalary) {
-  return Math.min(grossSalary * 0.6);
+  return Math.min(grossSalary * 0.6); // calculates the amount for NSSF deduction
 }
 function nhifCalculation(grossSalary) {
   if (grossSalary < 6000) return 150;
-  else if (grossSalary >= 6000 && grossSalary < 8000) return 300;
+  else if (grossSalary >= 6000 && grossSalary < 8000)
+    return 300; // NHIF calculation
   else if (grossSalary >= 8000 && grossSalary < 12000) return 400;
   else if (grossSalary >= 12000 && grossSalary < 15000) return 500;
   else if (grossSalary >= 15000 && grossSalary < 20000) return 600;
@@ -20,6 +21,7 @@ function nhifCalculation(grossSalary) {
   else if (grossSalary >= 90000 && grossSalary < 100000) return 1600;
   else if (grossSalary > 100000) return 1700;
 }
+// Calculation of amount of tax to be paid per income
 function taxableIncomeCalc(grossSalary) {
   return grossSalary - nssfCalculation;
 }
@@ -35,6 +37,7 @@ function payeeCalculation(incomeToBeTaxed) {
   }
   return tax;
 }
+//net salary  calculation
 function netSalary(basicSalary, benefits) {
   const grossSalary = basicSalary + benefits;
   const nssf = nssfCalculation(grossSalary);
@@ -42,7 +45,6 @@ function netSalary(basicSalary, benefits) {
   const payee = payeeCalculation(incomeToBeTaxed);
   const netSalaryy = grossSalary - nssf - nhif - payee;
 }
-const basicSalary = prompt("Enter your basic salary");
-const benefits = prompt("Enter your benefits");
-console.log(`tax : ${payeeCalculation}`);
-alert(`Net Salary : ${netSalary}`);
+const basicSalary = prompt("Enter your basic salary"); // prompts the user to key in the gross payment
+console.log(`tax : ${payeeCalculation}`); // calculates and returns the amount of tax paid per gross payment
+alert(`Net Salary : ${netSalary}`); //alerts the user of net salary after all deductions
