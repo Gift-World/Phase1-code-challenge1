@@ -45,5 +45,4 @@ function netSalary(basicSalary, benefits) {
 const basicSalary = prompt("Enter your basic salary");
 const benefits = prompt("Enter your benefits");
 console.log(`tax : ${payeeCalculation}`);
-console.log(``);
 alert(`Net Salary : ${netSalary}`);
