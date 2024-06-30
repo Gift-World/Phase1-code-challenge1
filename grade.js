@@ -1,15 +1,15 @@
 function accessStudentMarks() {
   let studentMarks;
   while (true) {
-    studentMarks = prompt("Type in student marks between 0 and 100:");
+    studentMarks = prompt("Type in student marks between 0 and 100:"); // prompts the user to key in data
     if (studentMarks === null) {
-      return;
+      return; // exits the prompt when cancel is clicked
     }
     studentMarks = parseFloat(studentMarks);
     if (!isNaN(studentMarks) && studentMarks >= 0 && studentMarks <= 100) {
       break;
     } else {
-      alert("Please type in a number between 0 and 100!");
+      alert("Please type in a number between 0 and 100!"); //alerts the user incase the value keyed in is not a number
     }
   }
 
@@ -26,5 +26,5 @@ function accessStudentMarks() {
   } else if (studentMarks < 40) {
     grade = "E";
   }
-  alert(`The grade for marks ${studentMarks} is: ${grade}`);
+  alert(`The grade for marks ${studentMarks} is: ${grade}`); // alerts the user of the grade according to the value keyed in
 }
